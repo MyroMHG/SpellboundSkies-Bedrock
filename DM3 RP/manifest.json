@@ -1,0 +1,30 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Spellbound Skies RP",
+		"description": "A magic themed dragon mounts inspired addon",
+		"uuid": "31719625-72e8-4789-8bf3-d80d59a451d4",
+		"version": [0, 0, 1],
+		"min_engine_version": [1, 20,80],
+		"pack_scope": "world"
+	},
+	"modules": [
+		{
+			"description": "ressource pack for Spellbound Skies",
+			"uuid": "9a363c81-7c3f-49fd-9070-c0cd48e42569",
+			"version": [0, 0, 1],
+			"type": "resources"
+		}
+    ],
+    "metadata": {
+        "authors": [
+			"Myro and Tomanex"
+        ]
+    },
+	"dependencies": [
+		{
+			"version": [0, 0, 1],
+			"uuid": "e2c03426-7a1e-429a-8554-d6581f6848ac"
+		}
+	]
+}

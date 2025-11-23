@@ -1,0 +1,18 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"dmss:nest_block": {
+		"isotropic": true,
+		"textures": "nest_block",
+		"sound": "wood"
+	},
+	"dmss:o_altar":{
+		"sound": "tuff"
+	},
+	"dmss:n_altar":{
+		"sound": "tuff"
+	}
+}
