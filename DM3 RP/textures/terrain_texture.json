@@ -1,0 +1,32 @@
+{
+	"resource_pack_name": "pack.name",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"none": {
+			"textures": [ "textures/entity/none" ]
+		},
+		"nest_block": {
+			"textures": [ "textures/blocks/nest_block" ]
+		},
+		"o_altar_side": {
+			"textures": [ "textures/blocks/altar_side" ]
+		},
+		"o_altar_top": {
+			"textures": [ "textures/blocks/altar_top" ]
+		},
+		"o_altar_down": {
+			"textures": [ "textures/blocks/altar_bottom" ]
+		},
+		"n_altar_side": {
+			"textures": [ "textures/blocks/nether_altar_side" ]
+		},
+		"n_altar_top": {
+			"textures": [ "textures/blocks/nether_altar_top" ]
+		},
+		"n_altar_down": {
+			"textures": [ "textures/blocks/nether_altar_bottom" ]
+		}
+	}
+}

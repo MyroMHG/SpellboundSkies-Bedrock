@@ -1,0 +1,58 @@
+{
+	"resource_pack_name": "Spellbound Skies",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"guidebook":{"textures": "textures/items/guidebook"},
+//dragon_orb
+		"dragon_orb":{"textures": "textures/items/dragon_orb/orb"},
+		"dragon_orb_mystery":{"textures": "textures/items/dragon_orb/mystery"},
+		"dragon_orb_cherry":{"textures": "textures/items/dragon_orb/cherry"},
+//axe
+		"cherry_dragon_axe":{"textures": "textures/items/axe/cherry"},
+		"lapis_dragon_axe":{"textures": "textures/items/axe/lapis"},
+//hoe
+		"cherry_dragon_hoe":{"textures": "textures/items/hoe/cherry"},
+		"lapis_dragon_hoe":{"textures": "textures/items/hoe/lapis"},
+//ingot
+		"cherry_dragon_ingot":{"textures": "textures/items/ingot/cherry"},
+		"lapis_dragon_ingot":{"textures": "textures/items/ingot/lapis"},
+//pickaxe
+		"lapis_dragon_pickaxe":{"textures": "textures/items/pickaxe/lapis"},
+//scales
+		"cherry_dragon_scales":{"textures": "textures/items/scales/cherry"},
+		"lapis_dragon_scales":{"textures": "textures/items/scales/lapis"},
+//shovel
+		"cherry_dragon_shovel":{"textures": "textures/items/shovel/cherry"},
+		"lapis_dragon_shovel":{"textures": "textures/items/shovel/lapis"},
+//spellstone
+		"cherry_spellstone":{"textures": "textures/items/spellstone/cherry"},
+		"lapis_spellstone":{"textures": "textures/items/spellstone/lapis"},
+//wands
+		"cherry_dragon_wand":{"textures": "textures/items/wand/cherry"},
+		"lapis_dragon_wand":{"textures": "textures/items/wand/lapis"},
+//staff
+		"cherry_dragon_staff":{"textures": "textures/items/staff/cherry"},
+		"lapis_dragon_staff":{"textures": "textures/items/staff/lapis"},
+//sword
+		"cherry_dragon_sword":{"textures": "textures/items/sword/cherry"},
+		"lapis_dragon_sword":{"textures": "textures/items/sword/lapis"},
+//soulstone
+		"soulstone":{"textures": "textures/items/soulstone"},
+//heads
+		"cherry_dragon_head":{"textures": "textures/entity/cherry_dragon/head"},
+		"lapis_head":{"textures": "textures/entity/boss/lapis_head"},
+//eggs
+		"cherry_dragon_egg":{"textures": "textures/entity/cherry_dragon/icon_egg"},
+//armor
+		"dragon_helmet":{"textures": "textures/items/armor/dragon/dragon_scale_helmet"},
+		"dragon_chestplate":{"textures": "textures/items/armor/dragon/dragon_scale_chestplate"},
+		"dragon_leggings":{"textures": "textures/items/armor/dragon/dragon_scale_leggings"},
+		"dragon_boots":{"textures": "textures/items/armor/dragon/dragon_scale_boots"},
+		"forest_crown":{"textures":"textures/items/armor/forest/forest_crown"},
+		"forest_jerkin":{"textures":"textures/items/armor/forest/forest_jerkin"},
+		"forest_pants":{"textures":"textures/items/armor/forest/forest_pants"},
+		"forest_boots":{"textures":"textures/items/armor/forest/forest_boots"},
+//totems
+		"lapis_totem":{"textures":"textures/items/totems/totem_of_the_lapis_dragon"}
+	}
+}
