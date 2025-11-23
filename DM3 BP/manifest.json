@@ -1,0 +1,47 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Spellbound Skies BP",
+		"description": "A magic themed dragon mounts inspired addon",
+		"uuid": "e2c03426-7a1e-429a-8554-d6581f6848ac",
+		"version": [0, 0, 1],
+		"min_engine_version": [1,20,30],
+		"pack_scope": "world"
+	},
+	"modules": [
+		{
+			"description": "behavior pack for Spellbound Skies",
+			"uuid": "e93b4c1d-c0e1-48a6-b3c9-05d93877d9fa",
+			"version": [0, 0, 1],
+			"type": "data"
+		},
+		{
+			"uuid": "49017888-c006-4c09-9432-7edf081d1456",
+			"version": [1, 0, 0],
+			"type": "script",
+			"language": "javascript",
+			"entry": "scripts/main.js"
+		}
+	],
+    "metadata": {
+        "authors": [
+			"Myro and Tomanex"
+        ],
+        "product_type": "addon"
+    },
+	"capabilities": ["script_eval"],
+	"dependencies": [
+		{
+			"version": [0, 0, 1],
+			"uuid": "31719625-72e8-4789-8bf3-d80d59a451d4"
+		},
+		{
+            "module_name": "@minecraft/server",
+            "version": "1.13.0"
+        },
+		{
+    		"module_name": "@minecraft/server-ui",
+    		"version": "1.1.0"
+		}
+	]
+}
