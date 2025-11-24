@@ -6,9 +6,9 @@
 		},
 		"tags": ["altar"],
 		"pattern": [
-			" O ",
 			"OPO",
-			" O "
+			"PSP",
+			"OPO"
 		],
 		"key": {
 			"O": {
@@ -16,6 +16,9 @@
 			},
 			"P": {
 				"item": "minecraft:ender_pearl"
+			},
+			"S": {
+				"item": "dmss:soulstone"
 			}
 		},
 		"result": {

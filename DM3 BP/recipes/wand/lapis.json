@@ -2,26 +2,25 @@
 	"format_version": "1.12",
 	"minecraft:recipe_shaped": {
 		"description": {
-			"identifier": "dmss:cherry_dragon_shovel"
+			"identifier": "dmss:lapis_dragon_wand"
 		},
 		"tags": [
-			"o_altar"
+			"n_altar"
 		],
 		"pattern": [
-			"X",
-			"#",
-			"#"
+			"  X",
+			" # "
 		],
 		"key": {
 			"X": {
-				"item": "dmss:cherry_dragon_ingot"
+				"item": "dmss:lapis_spellstone"
 			},
 			"#": {
 				"item": "minecraft:stick"
 			}
 		},
 		"result": {
-			"item": "dmss:cherry_dragon_shovel"
+			"item": "dmss:lapis_dragon_wand"
 		},
     	"unlock":{"context": "AlwaysUnlocked"}
 	}
