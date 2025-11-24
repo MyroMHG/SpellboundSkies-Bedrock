@@ -33,6 +33,8 @@
 			"sound_effects": {
 				"flying": "elytra.loop",
 				"flap": "mob.custom_dragon.flap",
+				"attack": "mob.custom_dragon.melee",
+				"shoot":"mob.custom_dragon.breath",
 				"death":"mob.enderdragon.death"
 			},
 			"render_controllers": [

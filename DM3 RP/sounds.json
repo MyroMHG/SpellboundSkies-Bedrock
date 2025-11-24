@@ -1,6 +1,20 @@
 {
 	"entity_sounds": {
 		"entities": {
+			"dmss:lapis_dragon": {
+				"volume": 5.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.custom_dragon.growl",
+					"hurt": "mob.custom_dragon.hit",
+					"attack": "mob.custom_dragon.melee",
+					"shoot":"mob.custom_dragon.breath",
+					"step": "mob.custom_dragon.step"
+				}
+			},
 			"dmss:cherry_dragon": {
 				"volume": 5.0,
 				"pitch": [

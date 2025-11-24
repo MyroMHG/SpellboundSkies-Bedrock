@@ -131,6 +131,11 @@
 						"1.5": [0, 0, 0]
 					}
 				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "shoot"
+				}
 			}
 		},
 		"animation.dragon.hover": {
@@ -378,6 +383,11 @@
 						"0.0417": [30, 0, 0],
 						"0.0833": [0, 0, 0]
 					}
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "attack"
 				}
 			}
 		},
@@ -666,6 +676,26 @@
 				"group6": {
 					"rotation": [0, 27.5, -0.2]
 				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "step"
+				},
+				"1.0": {
+					"effect": "step"
+				},
+				"2.0": {
+					"effect": "step"
+				},
+				"3.0": {
+					"effect": "step"
+				},
+				"4.0": {
+					"effect": "step"
+				},
+				"5.0": {
+					"effect": "step"
+				}
 			}
 		},
 		"animation.dragon.sit_target": {
@@ -909,6 +939,20 @@
 						"1.1667": [10, 0, 0],
 						"1.2083": ["64 - Math.abs(-Math.sin(query.anim_time / 4 * 256.0 + 42) * 55.0)", 0, 0]
 					}
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "step"
+				},
+				"1.0": {
+					"effect": "step"
+				},
+				"2.0": {
+					"effect": "step"
+				},
+				"3.0": {
+					"effect": "step"
 				}
 			}
 		}

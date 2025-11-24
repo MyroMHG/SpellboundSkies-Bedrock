@@ -1,4 +1,13 @@
 {
+	"item.orb.capture":{
+		"category":"neutral",
+		"sounds":[
+			{
+				"name": "sounds/item/orb/capture",
+				"volume": 1
+			}
+		]
+	},
 	"mob.custom_dragon.flap": {
 		"category": "neutral",
 		"sounds": [
@@ -54,19 +63,22 @@
 			}
 		]
 	},
-	"mob.custom_dragon.breath":{
-		"category": "neutral",
-		"sounds": [
-			{
-				"name": "sounds/mob/dragon/shoot/breath",
-				"volume": 1
-			}
-		]
-	},
 	"custom.dragon_orb":{
 		"sounds":[
 			{
+				"name": "sounds/mob/dragon/growl/growl1",
+				"volume": 1.0
+			}
+		]
+	},
+	"mob.ore_dragon.roar":{
+		"sounds":[
+			{
 				"name": "sounds/mob/dragon/growl/growl3",
+				"volume": 1.0
+			},
+			{
+				"name": "sounds/mob/dragon/growl/growl4",
 				"volume": 1.0
 			}
 		]

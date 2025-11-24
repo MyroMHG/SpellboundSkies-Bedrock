@@ -28,6 +28,12 @@
 					"controller_attack"
 				]
 			},
+			"sound_effects": {
+				"roar": "mob.ore_dragon.roar",
+				"attack": "mob.custom_dragon.melee",
+				"shoot":"mob.custom_dragon.breath",
+				"death":"mob.enderdragon.death"
+			},
 			"render_controllers": [
 				"controller.render.default"
 			],

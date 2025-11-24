@@ -184,6 +184,11 @@
 					},
 					"position": [0, 0.7, -2]
 				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "roar"
+				}
 			}
 		},
 		"animation.ore_dragon.walk": {
