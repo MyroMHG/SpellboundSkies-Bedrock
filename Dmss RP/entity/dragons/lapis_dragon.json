@@ -1,0 +1,45 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dmss:lapis_dragon",
+			"materials": {
+				"default":"entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/boss/lapis_dragon"
+			},
+			"geometry": {
+				"default": "geometry.ore_dragon"
+			},
+			"animations": {
+				"idle": "animation.ore_dragon.idle",
+				"walk": "animation.ore_dragon.walk",
+				"controller": "controller.animation.ore_dragon",
+				"controller_attack":"controller.animation.ore_dragon_attack",
+				"bite_attack": "animation.dragon.bite_attack",
+				"ranged_attack": "animation.dragon.ranged_attack",
+				"ram": "animation.dragon.ranged_attack",
+				"roar": "animation.ore_dragon.roar"
+			},
+			"scripts": {
+				"animate": [
+					"controller",
+					"controller_attack"
+				]
+			},
+			"sound_effects": {
+				"roar": "mob.ore_dragon.roar",
+				"attack": "mob.custom_dragon.melee",
+				"shoot":"mob.custom_dragon.breath",
+				"death":"mob.enderdragon.death"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture": "lapis_head"
+			}
+		}
+	}
+}

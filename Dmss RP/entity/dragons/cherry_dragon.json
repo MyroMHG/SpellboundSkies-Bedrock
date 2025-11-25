@@ -1,0 +1,48 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dmss:cherry_dragon",
+			"materials": {
+				"default":"entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cherry_dragon/dragon"
+			},
+			"geometry": {
+				"default": "geometry.custom_dragon"
+			},
+			"animations": {
+				"idle": "animation.dragon.idle",
+				"walk": "animation.dragon.walk2",
+				"fly": "animation.dragon.fly",
+				"hover": "animation.dragon.hover",
+				"sit": "animation.dragon.sit",
+				"sit_target": "animation.dragon.sit_target",
+				"controller": "controller.animation.dragon",
+				"controller_attack":"controller.animation.dragon_attack",
+				"bite_attack": "animation.dragon.bite_attack",
+				"ranged_attack": "animation.dragon.ranged_attack"
+			},
+			"scripts": {
+				"animate": [
+					"controller",
+					"controller_attack"
+				]
+			},
+			"sound_effects": {
+				"flying": "elytra.loop",
+				"flap": "mob.custom_dragon.flap",
+				"attack": "mob.custom_dragon.melee",
+				"shoot":"mob.custom_dragon.breath",
+				"death":"mob.enderdragon.death"
+			},
+			"render_controllers": [
+				"controller.render.custom_dragon"
+			],
+			"spawn_egg": {
+				"texture": "cherry_dragon_head"
+			}
+		}
+	}
+}

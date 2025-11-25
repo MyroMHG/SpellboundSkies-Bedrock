@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dmms:dragon_fireball",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/breath/fireball"
+			},
+			"geometry": {
+				"default": "geometry.projectile"
+			},
+			"animations": {
+				"particles": "animation.projectile"
+			},
+			"particle_effects": {
+				"default": "dmss:dragon_fireball"
+			},
+			"scripts": {
+				"scale": "0.5",
+				"animate": [
+					"particles"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

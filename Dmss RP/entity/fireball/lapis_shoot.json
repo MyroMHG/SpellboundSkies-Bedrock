@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dmss:lapis_shoot",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/breath/lapis"
+			},
+			"geometry": {
+				"default": "geometry.projectile"
+			},
+			"animations": {
+				"particles": "animation.projectile"
+			},
+			"particle_effects": {
+				"default": "dmss:lapis_shoot"
+			},
+			"scripts": {
+				"scale": "0.5",
+				"animate": [
+					"particles"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

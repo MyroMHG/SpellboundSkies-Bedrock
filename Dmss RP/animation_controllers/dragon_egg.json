@@ -1,0 +1,37 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.dragon_egg": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "hatching": "query.is_ignited"
+                        }
+                    ]
+                },
+                "hatching": {
+                    "animations": [
+                        "hatching"
+                    ],
+                    "blend_transition": 0.08,
+                    "blend_via_shortest_path": true,
+                    "transitions": [
+                        {
+                            "shaking": "query.is_transforming"
+                        }
+                    ]
+                },
+                "shaking": {
+                    "animations": [
+                        "shaking",
+                        "hatching"
+                    ],
+                    "blend_transition": 0.08,
+                    "blend_via_shortest_path": true
+                }
+            }
+        }
+    }
+}

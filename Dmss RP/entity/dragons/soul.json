@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dmss:soul",
+			"materials": {
+				"default":"entity_alphatest"
+			},
+			"textures": {
+				"cherry": "textures/entity/cherry_dragon/dragon"
+			},
+			"geometry": {
+				"default": "geometry.soul"
+			},
+			"animations": {
+				"default": "controller.animation.soul",
+				"close":"animation.soul.close",
+				"roll": "animation.soul.roll",
+				"revive": "animation.soul.revive",
+				"reset": "animation.soul.reset"
+			},
+			"scripts": {
+				"animate": [
+					"default"
+				]
+			},
+			"sound_effects": {
+				"close":"custom.soul.close",
+				"open": "custom.soul.open",
+				"growl": "custom.soul.ambient"
+			},
+			"particle_effects": {
+				"smoke": "dmss:smoke"
+			},
+			"render_controllers": [
+				"controller.render.soul"
+			]
+		}
+	}
+}

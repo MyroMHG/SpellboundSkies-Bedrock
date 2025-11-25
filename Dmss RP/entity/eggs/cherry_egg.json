@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dmss:cherry_dragon_egg",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/cherry_dragon/egg"
+			},
+			"geometry": {
+				"default": "geometry.dragon_egg"
+			},
+			"animations": {
+				"hatching": "animation.egg_particles",
+				"shaking": "animation.egg_shaking",
+				"controller":"controller.animation.dragon_egg"
+			},
+			"scripts": {
+				"animate": [
+					"controller"
+				]
+			},
+			"sound_effects": {
+				"egg_krack": "mob.custom_dragon.egg_krack",
+				"hatch": "mob.custom_dragon.hatch"
+			},
+			"particle_effects": {
+				"cherry_hatching": "dmss:cherry_egg_hatching"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"texture": "cherry_dragon_egg"
+			}
+		}
+	}
+}

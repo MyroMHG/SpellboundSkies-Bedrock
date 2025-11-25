@@ -1,0 +1,61 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"dmss:lapis_dragon": {
+				"volume": 5.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.custom_dragon.growl",
+					"hurt": "mob.custom_dragon.hit",
+					"attack": "mob.custom_dragon.melee",
+					"shoot":"mob.custom_dragon.breath",
+					"step": "mob.custom_dragon.step"
+				}
+			},
+			"dmss:cherry_dragon": {
+				"volume": 5.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.custom_dragon.growl",
+					"hurt": "mob.custom_dragon.hit",
+					"saddle": "armor.equip_chain",
+					"attack": "mob.custom_dragon.melee",
+					"shoot":"mob.custom_dragon.breath",
+					"step": "mob.custom_dragon.step",
+					"eat": {
+						"sound": "mob.custom_dragon.eat",
+						"volume": [
+							0.5,
+							1.5
+						],
+						"pitch": [
+							0.8,
+							1.2
+						]
+					}
+				}
+			},
+			"dmss:cherry_dragon_egg": {
+				"volume": 5.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"hurt": "block.turtle_egg.break",
+					"death": {
+						"sound": "block.turtle_egg.break",
+						"volume": 5.0,
+						"pitch": 0.5
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,230 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.dragon": {
+			"initial_state": "idle",
+			"states": {
+				"fly": {
+					"animations": [
+						"fly"
+					],
+					"blend_transition": 0.75,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"idle": "(!query.is_sitting || query.has_rider) && query.is_on_ground"
+						},
+						{
+							"sit": "query.is_sitting && query.is_on_ground && !query.has_rider"
+						},
+						{
+							"hover": "!query.is_on_ground && query.modified_move_speed <= 0.5"
+						}
+					]
+				},
+				"hover": {
+					"animations": [
+						"hover"
+					],
+					"blend_transition": 0.75,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"idle": "(!query.is_sitting || query.has_rider) && query.is_on_ground"
+						},
+						{
+							"fly": "!query.is_on_ground && query.modified_move_speed > 0.5 && query.has_rider"
+						},
+						{
+							"sit": "query.is_sitting && query.is_on_ground && !query.has_rider"
+						}
+					]
+				},
+				"sit": {
+					"animations": [
+						"sit"
+					],
+					"blend_transition": 0.75,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"idle": "!query.is_sitting || query.has_rider"
+						},
+						{
+							"fly": "!query.is_on_ground && query.modified_move_speed > 0.5 && query.has_rider"
+						},
+						{
+							"hover": "!query.is_on_ground && query.modified_move_speed <= 0.5 && query.has_rider"
+						},
+						{
+							"sit_target": "query.is_sitting && !query.has_rider && query.has_target"
+						}
+					]
+				},
+				"sit_target": {
+					"animations": [
+						"sit_target"
+					],
+					"blend_transition": 0.75,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"idle": "!query.is_sitting || query.has_rider"
+						},
+						{
+							"fly": "!query.is_on_ground && query.modified_move_speed > 0.5 && query.has_rider"
+						},
+						{
+							"sit": "query.is_sitting && !query.has_rider && !query.has_target"
+						},
+						{
+							"hover": "!query.is_on_ground && query.modified_move_speed <= 0.5 && query.has_rider"
+						}
+					]
+				},
+				"idle": {
+					"animations": [
+						"idle",
+						{ "walk": "math.min(query.modified_move_speed + 0.5, 1.5)*query.is_moving" }
+					],
+					"blend_transition": 0.75,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"fly": "!query.is_on_ground && query.modified_move_speed > 0.5 && query.has_rider"
+						},
+						{
+							"sit": "query.is_sitting && !query.has_rider"
+						},
+						{
+							"hover": "!query.is_on_ground && query.modified_move_speed <= 0.5 && query.has_rider"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.dragon_attack": {
+			"initial_state": "default",
+			"states": {
+				"default":{
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"bite_attack": "query.is_delayed_attacking == 1"
+						},
+						{
+							"ranged_attack": "query.facing_target_to_range_attack && query.anim_time > 0.1"
+						}
+					]
+				},
+				"bite_attack": {
+					"animations": [
+						"bite_attack"
+					],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"ranged_attack": {
+					"animations": [
+						"ranged_attack"
+					],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.ore_dragon":{
+			"initial_state": "default",
+			"states": {
+				"default":{
+					"animations": [
+						"idle",
+						{ "walk": "query.modified_move_speed * 3" }
+					]
+				}
+			}
+		},
+		"controller.animation.ore_dragon_attack": {
+			"initial_state": "default",
+			"states": {
+				"default":{
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"bite_attack": "query.is_delayed_attacking == 1"
+						},
+						{
+							"ranged_attack": "query.facing_target_to_range_attack && query.anim_time > 0.1"
+						},
+						{
+							"ram":"query.is_ram_attacking"
+						},
+						{
+							"roar":"query.is_roaring"
+						}
+					]
+				},
+				"bite_attack": {
+					"animations": [
+						"bite_attack"
+					],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"ranged_attack": {
+					"animations": [
+						"ranged_attack"
+					],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				},
+				"ram": {
+					"animations": [
+						"ram"
+					],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"default": "!query.is_ram_attacking"
+						}
+					]
+				},
+				"roar": {
+					"animations": [
+						"roar"
+					],
+					"blend_transition": 0.1,
+					"blend_via_shortest_path": true,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					]
+				}
+			}
+		}
+	}
+}

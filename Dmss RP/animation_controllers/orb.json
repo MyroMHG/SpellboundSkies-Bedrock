@@ -1,0 +1,30 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.orb": {
+            "initial_state": "first_person_hold",
+            "states": {
+                "first_person_hold": {
+                    "animations": [
+                        "first_person_hold"
+                    ],
+                    "transitions": [
+                        {
+                            "third_person_hold": "!query.is_first_person"
+                        }
+                    ]
+                },
+                "third_person_hold": {
+                    "animations": [
+                        "third_person_hold"
+                    ],
+                    "transitions": [
+                        {
+                            "first_person_hold": "query.is_first_person"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

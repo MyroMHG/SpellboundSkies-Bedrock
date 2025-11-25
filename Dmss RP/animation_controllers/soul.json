@@ -1,0 +1,51 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.soul": {
+            "initial_state": "close",
+            "states": {
+                "close": {
+                    "animations": [
+                        "close"
+                    ],
+                    "blend_transition": 0.5,
+                    "blend_via_shortest_path": true,
+                    "transitions": [
+                        {
+                            "roll": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "roll": {
+                    "animations": [
+                        "roll"
+                    ],
+                    "blend_transition": 0.5,
+                    "blend_via_shortest_path": true,
+                    "transitions": [
+                        {
+                            "reset": "query.is_transforming"
+                        }
+                    ]
+                },
+                "reset": {
+                    "animations": [
+                        "reset"
+                    ],
+                    "blend_transition": 0.2,
+                    "blend_via_shortest_path": true,
+                    "transitions": [
+                        {
+                            "roll": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "revive": {
+                    "animations": [
+                        {"revive": "0.25" }
+                    ]
+                }
+            }
+        }
+    }
+}

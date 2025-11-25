@@ -1,0 +1,32 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.egg_shaking": {
+			"loop": true,
+			"animation_length": 7.1,
+			"bones": {
+				"egg": {
+					"rotation": ["math.cos(query.anim_time * 200) * 10", 0, "math.cos(query.anim_time * 100) * 10"]
+				}
+			}
+		},
+		"animation.egg_particles": {
+			"loop": true,
+			"animation_length": 1,
+			"particle_effects": {
+				"0.0": {
+					"effect": "cherry_hatching",
+					"locator": "egg"
+				},
+				"0.33": {
+					"effect": "cherry_hatching",
+					"locator": "egg"
+				},
+				"0.66": {
+					"effect": "cherry_hatching",
+					"locator": "egg"
+				}
+			}
+		}
+	}
+}

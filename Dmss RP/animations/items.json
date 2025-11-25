@@ -1,0 +1,48 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.item_orb64.third_person_hold": {
+			"loop": true,
+			"animation_length": 10,
+			"bones": {
+				"root_item": {
+					"position": [4, 25, -21],
+					"scale": [0.8, 1, 0.8]
+				}
+			}
+		},
+		"animation.item_staff24.third_person_hold": {
+			"loop": true,
+			"animation_length": 10,
+			"bones": {
+				"root_item": {
+					"rotation": [0, 50, -270],
+					"position": [5.25, 72.38372, -52.1898],
+					"scale": [3, 2, 3]
+				}
+			}
+		},
+		"animation.item_orb64.first_person_hold": {
+			"loop": true,
+			"animation_length": 10,
+			"bones": {
+				"root_item": {
+					"rotation": [80, 80, 50],
+					"position": [-22, 25, -11.5],
+					"scale": [0.5, 1, 0.5]
+				}
+			}
+		},
+		"animation.item_staff24.first_person_hold": {
+			"loop": true,
+			"animation_length": 10,
+			"bones": {
+				"root_item": {
+					"rotation": [87.88704, 35.13058, 58.63482],
+					"position": [-24.78851, 15.49733, -5.50638],
+					"scale": 1
+				}
+			}
+		}
+	}
+}
