@@ -1,0 +1,55 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dmss:lapis_shoot",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+
+    "components": {
+      "minecraft:scale": {
+        "value": 1.5
+      },
+      "minecraft:collision_box": {
+        "width": 0.625,
+        "height": 0.625
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 5,
+            "knockback": true,
+            "should_bounce": true
+          },
+          "remove_on_hit": {},
+          "particle_on_hit": {
+            "particle_type": "largeexplode",
+            "on_other_hit": true
+          }
+        },
+        "hit_sound": "bullet.hit",
+        "destroyOnHurt": true,
+        "crit_particle_on_hurt": true,
+        "power": 1.6,
+        "gravity": 0.05,
+        "uncertainty_base": 5,
+        "uncertainty_multiplier": 2,
+        "anchor": 1,
+        "offset": [ 0, 0, 0 ],
+        "homing": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 7,
+          "use_motion_prediction_hints": true
+        }
+      }
+    }
+  }
+}

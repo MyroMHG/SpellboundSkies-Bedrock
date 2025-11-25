@@ -1,0 +1,69 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dmss:forest_shoot",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+    "components": {
+      "minecraft:scale": {
+        "value": 1.5
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "destroyOnHurt": true,
+        "crit_particle_on_hurt": true,
+        "on_hit": {
+          "impact_damage": {
+            "damage": 2,
+            "knockback": true,
+            "semi_random_diff_damage": false
+          },
+          "definition_event": {
+            "affect_splash_area": true,
+            "splash_area": 4,
+            "event_trigger": {
+              "event": "thorns"
+            }
+          },
+            "remove_on_hit": {}
+        },
+        "power": 1,
+        "gravity": 0.05,
+        "anchor": 2,
+        "offset": [0,0.9,0],
+        "reflect_on_hurt": false,
+        "owner_immune": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 100.0,
+          "max_dropped_ticks": 7,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "events": {
+      "thorns": {
+        "sequence": [
+          {
+            "queue_command": {
+              "command": [
+                "effect @e[r=1] poison 3 1",
+                "effect @e[r=3] slowness 3 5"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dmss:soul",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "despawn":{
+        "minecraft:instant_despawn": {}
+      },
+      "time":{
+        "minecraft:timer": {
+          "time": 900,
+          "looping": false,
+          "time_down_event": {"event": "despawn"}
+        }
+      },
+        "cherry":{
+            "minecraft:variant":{
+                "value": 0
+            },
+            "minecraft:interact": {
+                "interactions": [
+                    {"on_interact": {"filters": {"all_of": [{"test": "has_equipment","subject": "other","domain": "hand","value": "dmss:soulstone"}]},
+                      "event": "cherry_r","target": "self"},"interact_text": "Revive"}
+                ]
+            }
+        },
+        "cherry_transform":{
+            "minecraft:transformation": {
+                "into": "dmss:cherry_dragon<revived>",
+                "delay": {"value": 0.4},
+                "drop_inventory": false,
+                "drop_equipment": false,
+                "preserve_equipment": true,
+                "keep_level": true,
+                "keep_owner": true
+            }
+        }
+    },
+    "components": {
+        "minecraft:tameable": {},
+      "minecraft:is_collidable": {},
+      "minecraft:fire_immune": true,
+      "minecraft:nameable": {},
+      "minecraft:persistent": {},
+      "minecraft:knockback_resistance": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:type_family": {"family": ["dmss","corpse"]},
+      "minecraft:health": {
+        "value": 10,
+        "max": 200
+      },
+      "minecraft:physics": {},
+      "minecraft:collision_box": {
+        "width": 2.0,
+        "height": 3.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "cherry":{"add":{"component_groups":["cherry","time"]}},
+      "cherry_r": {
+        "add":{"component_groups":["cherry_transform"]}
+      },
+      "despawn": {
+        "add":{"component_groups":["despawn"]}
+      }
+    }
+  }
+}

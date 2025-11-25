@@ -1,0 +1,58 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dmss:lapis_dragon_hoe",
+			"menu_category": {  
+        		"group": "itemGroup.name.hoe",  
+        		"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:custom_components": ["tool:can_be_damaged"],
+			"minecraft:max_stack_size": 1,
+			"minecraft:damage": 7,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": true,
+			"minecraft:render_offsets": "tools",
+			"minecraft:is_tool":{},
+			"tag:minecraft:is_hoe": {},
+			"minecraft:icon": "lapis_dragon_hoe",
+			"minecraft:durability": {
+				"max_durability": 2068
+			},
+			"minecraft:display_name": {
+				"value": "Lapis dragon hoe"
+			},
+			"minecraft:enchantable": {
+				"value": 32,
+				"slot": "hoe"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"dmss:lapis_dragon_ingot"
+						],
+						"repair_amount": "query.max_durability * 0.25"
+					}
+				]
+			},
+			"minecraft:digger": {
+        		"destroy_speeds": [
+          			{"block": {"tags": "q.any_tag('minecraft:is_hoe_item_destructible')"},"speed": 12}
+        		],
+        		"use_efficiency": true
+      		},
+			"minecraft:tags": {
+                "tags": [
+					"minecraft:is_tool",
+					"minecraft:digger",
+					"minecraft:netherite_tier",
+					"minecraft:is_hoe",
+					"dmss:tool"
+				]
+            }
+		}
+	}
+}

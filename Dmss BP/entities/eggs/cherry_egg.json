@@ -1,0 +1,148 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dmss:cherry_dragon_egg",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "interact":{
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "interact_text": "Pick it up",
+              "spawn_items": {
+                "table": "loot_tables/egg_item/cherry_dragon.json"
+              },
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {"test": "is_family","subject": "other","value": "player"},
+                    {"test": "is_sneaking","subject": "other","operator": "==","value": true}
+                  ]
+                },
+                "event": "despawn",
+                "target": "self"
+              }
+            },
+            {
+              "interact_text": "Unlock guidebook",
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {"test": "is_family","subject": "other","value": "player"},
+                    {"test": "has_equipment", "subject": "other","domain": "hand","value": "dmss:guidebook"}
+                  ]
+                },
+                "event": "guidebook",
+                "target": "self"
+              }
+            }
+          ]
+        }
+      },
+      "start":{
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "event": "hatching",
+                "target": "self"
+              },
+              "interact_text": "Hatch Egg"
+            }
+          ]
+        }
+      },
+      "hatching": {
+        "minecraft:is_ignited": {},
+        "minecraft:ageable": {
+          "duration": 24000,
+            "feed_items": [
+              {"item": "minecraft:bone_meal","growth": 0.142857}
+            ],
+          "grow_up": {
+            "event": "hatch",
+            "target": "self"
+          }
+        }
+      },
+      "baby": {
+        "minecraft:is_shaking":{},
+        "minecraft:transformation": {
+          "begin_transform_sound": "block.turtle_egg.crack",
+          "transformation_sound": "block.turtle_egg.crack",
+          "into": "dmss:cherry_dragon<baby>",
+          "delay": {
+            "value": 60
+          }
+        }
+      },
+      "despawn":{
+        "minecraft:instant_despawn": {}
+      }
+    }, 
+    "components": {
+      "minecraft:is_stackable": {},
+      "minecraft:is_collidable": {},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/cherry_egg.json"
+      },
+      "minecraft:persistent": {},
+      "minecraft:type_family": {
+        "family": [ "egg" ]
+      },
+      "minecraft:health": {
+        "value": 125,
+        "max": 125
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:push_through": {"value": 0},
+      "minecraft:scale": {"value": 1.0},
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:fire_immune": true,
+       "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "minecraft:entity_born":{
+        "add":{"component_groups":["start"]}
+      },
+      "guidebook":{
+        "queue_command": {"command": ["scriptevent dmss:guidebook cherry_egg"]}
+      },
+      "despawn": {
+        "add": {"component_groups": ["despawn"]}
+      },
+      "minecraft:entity_spawned":{
+        "add":{"component_groups":["start"]}
+      },
+      "hatching":{
+        "remove": {"component_groups": ["start"]},
+        "add":{"component_groups":["hatching","interact"]}
+      },
+      "start_transformation":{
+        "queue_command": {"command": ["function overworld_egg"]}
+      },
+      "hatch": {
+        "remove": {"component_groups": ["hatching"]},
+        "add": {"component_groups": ["baby"]}
+      }
+    }
+  }
+}

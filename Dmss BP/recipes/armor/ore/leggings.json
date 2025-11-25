@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dmss:ore_leggings_lapis"
+		},
+		"tags": [
+			"n_altar"
+		],
+		"pattern": [
+			"###",
+			"# #",
+			"# #"
+		],
+		"key": {
+			"#": {
+				"item": "dmss:lapis_dragon_scales"
+			}
+		},
+		"result": {
+			"item": "dmss:ore_dragon_leggings"
+		},
+    	"unlock":{"context": "AlwaysUnlocked"}
+	}
+}

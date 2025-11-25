@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dmss:lapis_dragon_axe"
+		},
+		"tags": [
+			"o_altar"
+		],
+		"pattern": [
+			"XX",
+			"X#",
+			" #"
+		],
+		"key": {
+			"X": {
+				"item": "dmss:lapis_dragon_ingot"
+			},
+			"#": {
+				"item": "minecraft:stick"
+			}
+		},
+		"result": {
+			"item": "dmss:lapis_dragon_axe"
+		},
+    	"unlock":{"context": "AlwaysUnlocked"}
+	}
+}

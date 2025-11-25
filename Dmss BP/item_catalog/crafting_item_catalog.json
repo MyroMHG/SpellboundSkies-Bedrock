@@ -1,0 +1,96 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "dmss:cherry_dragon_ingot",
+              "name": "dmss:ingots"
+            },
+            "items": [
+              "dmss:cherry_dragon_ingot",
+              "dmss:lapis_dragon_ingot"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "dmss:cherry_dragon_scales",
+              "name": "dmss:scales"
+            },
+            "items": [
+              "dmss:cherry_dragon_scales",
+              "dmss:lapis_dragon_scales"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "dmss:cherry_spellstone",
+              "name": "dmss:spellstone"
+            },
+            "items": [
+              "dmss:cherry_spellstone",
+              "dmss:lapis_spellstone"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "dmss:cherry_dragon_staff",
+              "name": "dmss:staff"
+            },
+            "items": [
+              "dmss:cherry_dragon_staff",
+              "dmss:lapis_dragon_staff"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "dmss:lapis_totem",
+              "name": "dmss:totem"
+            },
+            "items": [
+              "dmss:lapis_totem"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "dmss:cherry_dragon_wand",
+              "name": "dmss:wand"
+            },
+            "items": [
+              "dmss:cherry_dragon_wand",
+              "dmss:lapis_dragon_wand"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

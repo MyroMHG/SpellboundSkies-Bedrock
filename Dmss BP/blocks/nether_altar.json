@@ -1,0 +1,35 @@
+{ 
+    "format_version": "1.21.80", 
+    "minecraft:block": {
+        "description": {
+        "identifier": "dmss:n_altar",
+            "menu_category": {
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {"texture": "n_altar_side"},
+                "up": {"texture": "n_altar_top"},
+                "down": {"texture": "n_altar_down"}
+            },
+            "minecraft:crafting_table": {
+                "crafting_tags": ["n_altar"],
+                "table_name": "Dragon Altar"
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 100000,
+                "item_specific_speeds": [
+                    {
+                        "item": {"tags": "q.any_tag('dmss:pickaxe')"},
+                        "destroy_speed": 10
+                    }
+                ]
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1000
+            }
+        }
+    }
+}

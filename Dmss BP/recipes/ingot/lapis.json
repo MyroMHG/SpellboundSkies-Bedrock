@@ -1,0 +1,18 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dmss:lapis_dragon_ingot"
+    },
+    "tags": ["crafting_table"],
+    "ingredients": [
+      { "item": "dmss:lapis_dragon_scales" },
+      { "item": "minecraft:netherite_ingot" }
+    ],
+    "result": {
+      "item": "dmss:lapis_dragon_ingot",
+      "count": 1
+    },
+    "unlock":{"context": "AlwaysUnlocked"}
+  }
+}

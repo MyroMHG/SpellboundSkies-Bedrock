@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dmss:forest_boots_cherry"
+		},
+		"tags": [
+			"o_altar"
+		],
+		"pattern": [
+			"# #",
+			"# #"
+		],
+		"key": {
+			"#": {
+				"item": "dmss:cherry_dragon_scales"
+			}
+		},
+		"result": {
+			"item": "dmss:forest_boots"
+		},
+    	"unlock":{"context": "AlwaysUnlocked"}
+	}
+}

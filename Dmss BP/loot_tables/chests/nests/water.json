@@ -1,0 +1,57 @@
+{
+  "pools": [
+    {
+      "rolls": { "min": 4, "max": 7 },
+      "entries": [
+        { "type": "item", "name": "minecraft:bone", "weight": 5,
+          "functions": [{"function": "set_count","count": {"min": 1,"max": 16}}] },
+        { "type": "item", "name": "minecraft:feather", "weight": 4,
+          "functions": [{"function": "set_count","count": {"min": 1,"max": 16}}] },
+        { "type": "item", "name": "minecraft:salmon", "weight": 3,
+          "functions": [{"function": "set_count","count": {"min": 1,"max": 16}}] },
+        { "type": "item", "name": "minecraft:stick", "weight": 3,
+          "functions": [{"function": "set_count","count": {"min": 1,"max": 16}}] },
+        { "type": "item", "name": "dragonmounts:dragon_nest_block", "weight": 4,
+          "functions": [{"function": "set_count","count": {"min": 1,"max": 10}}] },
+        { "type": "item", "name": "minecraft:prismarine_shard", "weight": 3,
+          "functions": [{"function": "set_count","count": {"min": 1,"max": 5}}] },
+        { "type": "item", "name": "minecraft:prismarine_crystals", "weight": 3,
+          "functions": [{"function": "set_count","count": {"min": 1,"max": 5}}] },
+        { "type": "item", "name": "minecraft:cod", "weight": 2,
+          "functions": [{"function": "set_count","count": {"min": 1,"max": 16}}] },
+        { "type": "item", "name": "minecraft:kelp", "weight": 3,
+          "functions": [{"function": "set_count","count": {"min": 1,"max": 16}}] },
+        { "type": "item", "name": "minecraft:heart_of_the_sea", "weight": 1 },
+        { "type": "item", "name": "minecraft:trident", "weight": 1 }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        { "condition": "random_chance", "chance": 0.1 }
+      ],
+      "entries": [
+        {"type": "item","name": "minecraft:enchanted_book","weight": 5,
+          "functions": [{"function": "specific_enchants","enchants": [{"id": "respiration","level": [1,3]}]}]},
+        {"type": "item","name": "minecraft:enchanted_book","weight": 5,
+          "functions": [{"function": "specific_enchants","enchants": [{"id": "riptide","level": [1,3]}]}]},
+		    { "type": "item", "name": "dragonmounts:aether_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:enchant_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:ender_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:fire_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:forest_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:ice_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:moonlight_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:nether_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:sculk_essence", "weight": 2 },
+		    { "type": "item", "name": "dragonmounts:skeleton_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:storm_essence", "weight": 2 },
+		    { "type": "item", "name": "dragonmounts:sunlight_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:terra_essence", "weight": 1 },
+		    { "type": "item", "name": "dragonmounts:water_essence", "weight": 3 },
+		    { "type": "item", "name": "dragonmounts:wither_essence", "weight": 2 },
+		    { "type": "item", "name": "dragonmounts:zombie_essence", "weight": 1 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dmss:lapis_dragon_sword",
+			"menu_category": {
+				"category": "equipment",
+				"group": "itemGroup.name.sword"
+			}
+		},
+		"components": {
+			"minecraft:custom_components": ["tool:can_be_damaged"],
+			"minecraft:max_stack_size": 1,
+			"minecraft:damage": 9,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:icon": "lais_dragon_sword",
+			"minecraft:is_sword": {},
+			"minecraft:durability": {
+				"max_durability": 2160
+			},
+			"minecraft:display_name": {
+				"value": "Lapis dragon sword"
+			},
+			"minecraft:enchantable": {
+				"value": 32,
+				"slot": "sword"
+			},
+			"tag:minecraft:is_sword":{},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"dmss:lapis_dragon_ingot"
+						],
+						"repair_amount": "2160 * 0.25"
+					}
+				]
+			},
+			"minecraft:digger": {
+				"use_efficiency": false,
+				"destroy_speeds": [
+					{"block": {"tags": "q.any_tag('minecraft:is_sword_item_destructible')"},"speed": 12}
+				]
+			},
+			"minecraft:tags": {
+                "tags": [
+					"minecraft:is_tool",
+					"minecraft:digger",
+					"minecraft:netherite_tier",
+					"minecraft:is_sword",
+					"dmss:tool"
+				]
+            }
+		}
+	}
+}

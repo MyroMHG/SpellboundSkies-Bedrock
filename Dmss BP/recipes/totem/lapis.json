@@ -1,0 +1,28 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "dmss:lapis_totem"
+		},
+		"tags": [
+			"o_altar"
+		],
+		"pattern": [
+			"###",
+			"#X#",
+			"###"
+		],
+		"key": {
+			"X": {
+				"item": "minecraft:totem"
+			},
+			"#": {
+				"item": "minecraft:lapis_block"
+			}
+		},
+		"result": {
+			"item": "dmss:lapis_totem"
+		},
+    	"unlock":{"context": "AlwaysUnlocked"}
+	}
+}

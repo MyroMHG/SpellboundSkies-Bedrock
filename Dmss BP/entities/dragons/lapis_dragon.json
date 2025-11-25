@@ -1,0 +1,276 @@
+{
+  "format_version": "1.21.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dmss:lapis_dragon",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups":{
+      "shoot":{
+        "minecraft:behavior.fire_at_target": {
+          "projectile_def": "dmss:lapis_shoot",
+          "priority": 0,
+          "attack_range": [0,20],
+          "attack_cooldown": 0.25,
+          "pre_shoot_delay": 0.25,
+          "post_shoot_delay": 1.25,
+          "ranged_fov": 90,
+          "owner_anchor": 1,
+          "owner_offset": [0,0.8,0],
+          "target_anchor": 0.5,
+          "target_offset": [0,0,0]
+        }
+      },
+      "melee":{
+        "minecraft:behavior.move_towards_target": {
+          "priority": 2,
+          "speed_multiplier": 1.8,
+          "within_radius": 64
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 1,
+          "speed_multiplier": 1.0,
+          "attack_duration": 0.08,
+          "hit_delay_pct": 0.04,
+          "track_target": true,
+          "reach_multiplier": 3.0,
+          "sound_event": "attack"
+        }
+      },
+      "ram":{
+        "minecraft:behavior.ram_attack": {
+          "priority": 0,
+          "run_speed": 1.0,
+          "ram_speed": 1.8,
+          "min_ram_distance": 4,
+          "ram_distance": 6,
+          "knockback_force": 2.5,
+          "knockback_height": 0.5,
+          "pre_ram_sound": "mob.dragon.step",
+          "ram_impact_sound": "random.explode",
+          "cooldown_range": [5,15],
+          "on_start": [
+            {
+              "event": "short_timer",
+              "target": "self"
+            }
+          ]
+        }
+      },
+      "roar":{
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 1,
+          "attack_time": 0.5,
+          "knockback_damage": 5,
+          "knockback_horizontal_strength": 4,
+          "knockback_vertical_strength": 4,
+          "knockback_range": 4,
+          "knockback_filters": {"test": "is_family","subject": "other","operator": "!=","value": "dragon"},
+          "damage_filters": {"test": "is_family","subject": "other","operator": "!=","value": "dragon"},
+          "on_roar_end": {"event": "melee"},
+          "cooldown_time": 0.5
+        }
+      }
+    },
+    "components": {
+      "minecraft:custom_hit_test": {
+	      "hitboxes": [
+		      {
+			      "width": 3,
+			      "height": 3,
+			      "pivot": [0, 1.5, -1.5]
+		      }
+	      ]
+      },
+      "minecraft:target_nearby_sensor": {
+          "inside_range": 5,
+          "outside_range": 6,
+          "must_see": true,
+          "on_inside_range": {
+            "event": "roar",
+            "target": "self"
+          },
+          "on_outside_range": {
+            "event": "ranged",
+            "target": "self"
+          }
+      },
+      "minecraft:navigation.walk": {
+        "priority": 3,
+        "can_jump":true,
+        "can_path_over_water": true,
+        "can_path_from_air": false,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:movement.basic": {
+        "max_turn": 45.0
+      },
+      "minecraft:movement": {
+        "value": 0.24
+      },
+      "minecraft:variable_max_auto_step": {
+        "base_value": 1.5625,
+        "controlled_value": 1.5625,
+        "jump_prevented_value": 0.5625
+      },
+      "minecraft:physics": {},
+      "minecraft:loot": {"table": "loot_tables/entities/lapis_dragon.json"},
+      "minecraft:fire_immune": true,
+      "minecraft:nameable": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:persistent": {},
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+      "minecraft:attack": {
+        "damage": 5
+      },
+      "minecraft:knockback_resistance": {
+        "value": 70,
+        "max": 80
+      },
+      "minecraft:health": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:collision_box": {
+        "width": 2,
+        "height": 3
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "breathesWater": true,
+        "suffocateTime": 10
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "contact",
+            "deals_damage": false
+          },
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "cause": "fly_into_wall",
+            "deals_damage": false
+          },
+          {
+            "cause": "magic",
+            "deals_damage": false
+          },
+          {
+            "cause": "suffocation",
+            "deals_damage": false
+          },
+          {
+            "cause": "void",
+            "deals_damage": false
+          },
+          {
+            "cause": "wither",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:behavior.look_at_target": {
+        "priority": 3,
+        "look_distance": 20,
+        "probability": 0.8,
+        "look_time": [1,5]
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 0,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                }
+              ]
+            }
+          }
+        ],
+        "within_radius": 20,
+        "scan_interval": 10,
+        "attack_interval": 1,
+        "reselect_targets": true,
+        "must_see": false,
+        "must_reach": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 2
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 4,
+        "speed_multiplier": 0.8,
+        "xz_dist": 50,
+        "y_dist": 50,
+        "interval": 4
+      },
+      "minecraft:behavior.move_to_block": {
+        "priority": 3,
+        "tick_interval": 1,
+        "start_chance": 0.5,
+        "search_range": 30,
+        "search_height": 5,
+        "goal_radius": 5,
+        "stay_duration": 2,
+        "target_selection_method": "random",
+        "target_offset": [0,0.25,0],
+        "target_blocks": ["dmss:o_altar"]
+      },
+      "minecraft:boss": {
+        "hud_range": 30,
+        "name": "Lapis dragon",
+        "should_darken_sky": true
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "alert_same_type": true
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add":{"component_groups":["shoot"]}
+      },
+      "roar":{
+        "remove":{"component_groups":["shoot"]},
+        "add":{"component_groups":["roar"]}
+      },
+      "melee":{
+        "sequence": [
+          {"remove":{"component_groups":["roar"]}},
+          {"randomize": [
+            {
+              "weight": 1,
+              "remove":{"component_groups":["melee"]},
+              "add":{"component_groups":["ram"]}
+            },
+            {
+              "weight": 1,
+              "remove":{"component_groups":["ram"]},
+              "add":{"component_groups":["melee"]}
+            }
+          ]}
+        ]
+      },
+      "ranged":{
+        "remove":{"component_groups":["ram","roar","melee"]},
+        "add":{"component_groups":["shoot"]}
+      }
+    }
+  }
+}
