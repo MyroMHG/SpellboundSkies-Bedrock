@@ -1,0 +1,17 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dmss:guidebook"
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": {
+        "texture": "guidebook"
+      },
+      "minecraft:display_name": {
+        "value": "Spellbound skies guidebook"
+      }
+    }
+  }
+} 
