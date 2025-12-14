@@ -12,7 +12,11 @@
             },
             "items": [
               "dmss:cherry_dragon_ingot",
-              "dmss:lapis_dragon_ingot"
+              "dmss:lapis_dragon_ingot",
+              "dmss:emerald_dragon_ingot",
+              "dmss:gold_dragon_ingot",
+              "dmss:quartz_dragon_ingot",
+              "dmss:redstone_dragon_ingot"
             ]
           }
         ]
@@ -27,7 +31,11 @@
             },
             "items": [
               "dmss:cherry_dragon_scales",
-              "dmss:lapis_dragon_scales"
+              "dmss:lapis_dragon_scales",
+              "dmss:emerald_dragon_scales",
+              "dmss:gold_dragon_scales",
+              "dmss:quartz_dragon_scales",
+              "dmss:redstone_dragon_scales"
             ]
           }
         ]
@@ -42,7 +50,11 @@
             },
             "items": [
               "dmss:cherry_spellstone",
-              "dmss:lapis_spellstone"
+              "dmss:lapis_spellstone",
+              "dmss:emerald_spellstone",
+              "dmss:gold_spellstone",
+              "dmss:quartz_spellstone",
+              "dmss:redstone_spellstone"
             ]
           }
         ]
@@ -57,7 +69,11 @@
             },
             "items": [
               "dmss:cherry_dragon_staff",
-              "dmss:lapis_dragon_staff"
+              "dmss:lapis_dragon_staff",
+              "dmss:emerald_dragon_staff",
+              "dmss:gold_dragon_staff",
+              "dmss:quartz_dragon_staff",
+              "dmss:redstone_dragon_staff"
             ]
           }
         ]
@@ -71,7 +87,11 @@
               "name": "dmss:totem"
             },
             "items": [
-              "dmss:lapis_totem"
+              "dmss:lapis_totem",
+              "dmss:emerald_totem",
+              "dmss:gold_totem",
+              "dmss:quartz_totem",
+              "dmss:redstone_totem"
             ]
           }
         ]
@@ -86,7 +106,11 @@
             },
             "items": [
               "dmss:cherry_dragon_wand",
-              "dmss:lapis_dragon_wand"
+              "dmss:lapis_dragon_wand",
+              "dmss:emerald_dragon_wand",
+              "dmss:gold_dragon_wand",
+              "dmss:quartz_dragon_wand",
+              "dmss:redstone_dragon_wand"
             ]
           }
         ]
