@@ -1,0 +1,17 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dmss:quartz_spellstone"
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": {
+        "texture": "quartz_spellstone"
+      },
+      "minecraft:display_name": {
+        "value": "Quartz Spellstone"
+      }
+    }
+  }
+}

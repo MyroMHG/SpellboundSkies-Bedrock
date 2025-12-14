@@ -1,0 +1,26 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dmss:gold_dragon_staff"
+		},
+		"components": {
+			"minecraft:custom_components": ["dmss:ore_staff"],
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:icon":"gold_dragon_staff",
+			"minecraft:durability": {
+				"max_durability": 20
+			},
+			"minecraft:display_name": {
+				"value": "Ore dragon staff"
+			},
+            "minecraft:interact_button":"Shock wave",
+			"minecraft:tags": {
+                "tags": [
+					"dmss:staff"
+				]
+            }
+		}
+	}
+}

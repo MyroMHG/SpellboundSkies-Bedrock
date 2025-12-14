@@ -1,0 +1,26 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dmss:gold_dragon_wand"
+		},
+		"components": {
+			"minecraft:custom_components": ["dmss:gold_wand"],
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": true,
+			"minecraft:icon":"gold_dragon_wand",
+			"minecraft:durability": {
+				"max_durability": 10
+			},
+			"minecraft:display_name": {
+				"value": "Gold dragon wand"
+			},
+            "minecraft:interact_button":"create ore",
+			"minecraft:tags": {
+                "tags": [
+					"dmss:wand"
+				]
+            }
+		}
+	}
+}

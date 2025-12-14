@@ -1,0 +1,59 @@
+{
+	"format_version": "1.21.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dmss:gold_dragon_pickaxe",
+			"menu_category": {  
+        		"group": "itemGroup.name.pickaxe",  
+        		"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:custom_components": ["tool:can_be_damaged"],
+			"minecraft:max_stack_size": 1,
+			"minecraft:damage": 7,
+			"minecraft:hand_equipped": true,
+			"minecraft:can_destroy_in_creative": true,
+			"minecraft:render_offsets": "tools",
+			"minecraft:is_tool":{},
+			"minecraft:pickaxe": {},
+			"minecraft:icon": "gold_dragon_pickaxe",
+			"minecraft:durability": {
+				"max_durability": 2680
+			},
+			"minecraft:display_name": {
+				"value": "Gold dragon pickaxe"
+			},
+			"minecraft:enchantable": {
+				"value": 32,
+				"slot": "pickaxe"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"dmss:gold_dragon_ingot"
+						],
+						"repair_amount": "2680 * 0.25"
+					}
+				]
+			},
+			"minecraft:digger": {
+        		"destroy_speeds": [
+          			{"block": {"tags": "q.any_tag('minecraft:is_pickaxe_item_destructible')"},"speed": 30}
+        		],
+        		"use_efficiency": true
+      		},
+			"minecraft:tags": {
+                "tags": [
+					"minecraft:is_tool",
+					"minecraft:digger",
+					"minecraft:netherite_tier",
+					"minecraft:is_pickaxe",
+					"dmss:tool",
+					"dmss:ore_pickaxe"
+				]
+            }
+		}
+	}
+}
