@@ -1,0 +1,26 @@
+{
+	"format_version": "1.21.80",
+	"minecraft:structure_set": {
+		"description": {
+			"identifier": "dmss:ore_dragon_n"
+		},
+		
+		"placement": {
+			"type": "minecraft:random_spread",
+			"salt": 587717443,
+			"separation": 12,
+			"spacing": 48,
+			"spread_type": "triangular"
+		},
+		"structures": [
+			{
+				"structure": "dmss:quartz",
+				"weight": 3
+			},
+            {
+				"structure": "dmss:gold_n",
+				"weight": 1
+			}
+		]
+	}
+}

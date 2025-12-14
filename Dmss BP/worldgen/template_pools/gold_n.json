@@ -2,19 +2,19 @@
   "format_version": "1.21.20",
   "minecraft:template_pool": {
     "description": {
-      "identifier": "dmss:redstone"
+      "identifier": "dmss:gold_n"
     },
     "elements": [
       {
         "element": {
           "element_type": "minecraft:single_pool_element",
-          "location": "redstone_cave",
-          "processors": "dmss:emerald",
+          "location": "gold_cave_n",
+          "processors": "dmss:empty",
           "projection":"rigid"
         },
         "weight": 1
       }
     ],
-    "fallback": "dmss:redstone"
+    "fallback": "dmss:gold_n"
   }
 }

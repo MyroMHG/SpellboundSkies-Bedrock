@@ -1,0 +1,39 @@
+{
+  "format_version": "1.21.80",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "dmss:gold_n"
+    },
+    "start_pool": "dmss:gold_n",
+    "step": "underground_structures",
+    "heightmap_projection": "none",
+    "start_height": {
+        "type": "uniform",
+        "min": {"above_bottom": 30 },
+        "max": {"above_bottom": 100} 
+    },
+    "dimension_padding": {
+        "top": 40,
+        "bottom": 10
+    },
+    "max_depth": 1,
+    "biome_filters": [
+      {
+        "any_of": [
+          {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "nether"
+          },
+          {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "nether_generation"
+          }
+        ]
+      }
+    ],
+    "terrain_adaptation": "beard_thin",
+    "liquid_settings": "apply_waterlogging"
+  }
+}
