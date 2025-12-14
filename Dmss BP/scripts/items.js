@@ -1,7 +1,7 @@
 import { world, system, EquipmentSlot, GameMode, Player} from "@minecraft/server";
 
 function applyDurabilityDamage(source, mainhand) {
-    if (source.getGameMode() === GameMode.creative) return; // Skip durability damage in creative mode
+    if (source.getGameMode() === GameMode.creative) return;
 
     const itemStack = mainhand.getItem();
     if (!itemStack) return;
@@ -9,21 +9,19 @@ function applyDurabilityDamage(source, mainhand) {
     const durability = itemStack.getComponent("minecraft:durability");
     if (!durability) return;
 
-    // Factor in unbreaking enchantment
     const enchantable = itemStack.getComponent("minecraft:able");
     const unbreakingLevel = enchantable?.getEnchantment("unbreaking")?.level ?? 0;
 
     const damageChance = durability.getDamageChance(unbreakingLevel) / 100;
 
-    if (Math.random() > damageChance) return; // Randomly skip damage based on unbreaking level
+    if (Math.random() > damageChance) return;
 
-    // Damage the item
     if (durability.damage >= durability.maxDurability - 1) {
-        mainhand.setItem(undefined); // Remove the item when it breaks
-        source.playSound("random.break"); // Play break sound
+        mainhand.setItem(undefined);
+        source.playSound("random.break");
     } else {
-        durability.damage++; // Increase durability damage
-        mainhand.setItem(itemStack); // Update item in hand
+        durability.damage++;
+        mainhand.setItem(itemStack);
     }
 }
 
@@ -128,8 +126,10 @@ world.beforeEvents.worldInitialize.subscribe(initEvent => {
             const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
             if (!mainhand) source.sendMessage('no mainhand;');
             MagicDamage(source, mainhand);
+            source.dimension.spawnParticle("dmss:magic",source.location);
 
             system.runTimeout(() => {
+                source.dimension.spawnParticle("dmss:cast",source.location);
             for (const target of source.dimension.getEntities({location: source.location,maxDistance: 6})) {
                 if (target === source) continue;
                     let dx = target.location.x - source.location.x;
@@ -138,7 +138,7 @@ world.beforeEvents.worldInitialize.subscribe(initEvent => {
                 dx /= mag;
                 dz /= mag;
 
-                source.dimension.spawnParticle("dmss:knockback",source.location);
+                target.dimension.spawnParticle("dmss:knockback",target.location);
                 target.applyKnockback(dx, dz, 3, 0.4);
                 const health = target.getComponent("health");
                 if (!health) continue;
@@ -162,6 +162,66 @@ world.beforeEvents.worldInitialize.subscribe(initEvent => {
             MagicDamage(source, mainhand);
         }
     });
+    initEvent.itemComponentRegistry.registerCustomComponent('dmss:emerald_wand', {
+        onUse(event) {
+            const source = event.source;
+            const pointA = {x: source.location.x+1,y: source.location.y-1,z: source.location.z+1};
+            const pointB = {x: source.location.x-1,y: source.location.y-1,z: source.location.z-1};
+            const dimension = source.dimension;
+
+            const equippable = source.getComponent("minecraft:equippable");
+            const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+
+            dimension.runCommandAsync(`fill ${pointA.x} ${pointA.y} ${pointA.z} ${pointB.x} ${pointB.y} ${pointB.z} emerald_ore replace stone`);
+            dimension.runCommandAsync(`fill ${pointA.x} ${pointA.y} ${pointA.z} ${pointB.x} ${pointB.y} ${pointB.z} deepslate_emerlad_ore replace deepslate`);
+            MagicDamage(source, mainhand);
+        }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('dmss:gold_wand', {
+        onUse(event) {
+            const source = event.source;
+            const pointA = {x: source.location.x+1,y: source.location.y-1,z: source.location.z+1};
+            const pointB = {x: source.location.x-1,y: source.location.y-1,z: source.location.z-1};
+            const dimension = source.dimension;
+
+            const equippable = source.getComponent("minecraft:equippable");
+            const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+
+            dimension.runCommandAsync(`fill ${pointA.x} ${pointA.y} ${pointA.z} ${pointB.x} ${pointB.y} ${pointB.z} gold_ore replace stone`);
+            dimension.runCommandAsync(`fill ${pointA.x} ${pointA.y} ${pointA.z} ${pointB.x} ${pointB.y} ${pointB.z} deepslate_gold_ore replace deepslate`);
+            dimension.runCommandAsync(`fill ${pointA.x} ${pointA.y} ${pointA.z} ${pointB.x} ${pointB.y} ${pointB.z} nether_gold_ore replace netherrack`);
+            MagicDamage(source, mainhand);
+        }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('dmss:quartz_wand', {
+        onUse(event) {
+            const source = event.source;
+            const pointA = {x: source.location.x+1,y: source.location.y-1,z: source.location.z+1};
+            const pointB = {x: source.location.x-1,y: source.location.y-1,z: source.location.z-1};
+            const dimension = source.dimension;
+
+            const equippable = source.getComponent("minecraft:equippable");
+            const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+
+            dimension.runCommandAsync(`fill ${pointA.x} ${pointA.y} ${pointA.z} ${pointB.x} ${pointB.y} ${pointB.z} quartz_ore replace netherrack`);
+            MagicDamage(source, mainhand);
+        }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('dmss:redstone_wand', {
+        onUse(event) {
+            const source = event.source;
+            const pointA = {x: source.location.x+1,y: source.location.y-1,z: source.location.z+1};
+            const pointB = {x: source.location.x-1,y: source.location.y-1,z: source.location.z-1};
+            const dimension = source.dimension;
+
+            const equippable = source.getComponent("minecraft:equippable");
+            const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+
+            dimension.runCommandAsync(`fill ${pointA.x} ${pointA.y} ${pointA.z} ${pointB.x} ${pointB.y} ${pointB.z} redstone_ore replace stone`);
+            dimension.runCommandAsync(`fill ${pointA.x} ${pointA.y} ${pointA.z} ${pointB.x} ${pointB.y} ${pointB.z} deepslate_redstone_ore replace deepslate`);
+            MagicDamage(source, mainhand);
+        }
+    });
     initEvent.itemComponentRegistry.registerCustomComponent('dmss:lapis_totem', {
     onUseOn: (event) => {
         const source = event.source
@@ -179,7 +239,109 @@ world.beforeEvents.worldInitialize.subscribe(initEvent => {
             const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
             if (!mainhand) source.sendMessage('no mainhand;');
             mainhand.setItem(undefined);
+            dimension.runCommandAsync(`fill ${pos.x -3} ${pos.y +1} ${pos.y -3} ${pos.x +3} ${pos.y +4} ${pos.y +3} air`);
             dimension.spawnEntity("dmss:lapis_dragon", {x: pos.x,y: pos.y+1,z: pos.z})
+        }
+        else{
+            source.sendMessage('wrong position (place it back in the stucture to resummon the dragon)');
+        }
+    }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('dmss:emerald_totem', {
+    onUseOn: (event) => {
+        const source = event.source
+        const block = event.block
+        const dimension = source.dimension;
+        if (!source.isSneaking) return;
+        if (block.typeId !== "dmss:o_altar") return;
+        const pos = block.location;
+        let below1 = dimension.getBlock({x: pos.x, y: pos.y - 1, z: pos.z});
+        let below2 = dimension.getBlock({x: pos.x, y: pos.y - 2, z: pos.z});
+
+        if (below1.typeId === "minecraft:reinforced_deepslate" && below2.typeId === "minecraft:reinforced_deepslate") {
+            const equippable = source.getComponent("minecraft:equippable");
+            if (!equippable) source.sendMessage('no equippable');
+            const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+            if (!mainhand) source.sendMessage('no mainhand;');
+            mainhand.setItem(undefined);
+            dimension.runCommandAsync(`fill ${pos.x -3} ${pos.y +1} ${pos.y -3} ${pos.x +3} ${pos.y +4} ${pos.y +3} air`);
+            dimension.spawnEntity("dmss:emerald_dragon", {x: pos.x,y: pos.y+1,z: pos.z})
+        }
+        else{
+            source.sendMessage('wrong position (place it back in the stucture to resummon the dragon)');
+        }
+    }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('dmss:gold_totem', {
+    onUseOn: (event) => {
+        const source = event.source
+        const block = event.block
+        const dimension = source.dimension;
+        if (!source.isSneaking) return;
+        if (block.typeId === "dmss:o_altar" || block.typeId === "dmss:n_altar"){
+        const pos = block.location;
+        let below1 = dimension.getBlock({x: pos.x, y: pos.y - 1, z: pos.z});
+        let below2 = dimension.getBlock({x: pos.x, y: pos.y - 2, z: pos.z});
+
+        if (below1.typeId === "minecraft:reinforced_deepslate" && below2.typeId === "minecraft:reinforced_deepslate") {
+            const equippable = source.getComponent("minecraft:equippable");
+            if (!equippable) source.sendMessage('no equippable');
+            const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+            if (!mainhand) source.sendMessage('no mainhand;');
+            mainhand.setItem(undefined);
+            dimension.runCommandAsync(`fill ${pos.x -3} ${pos.y +1} ${pos.y -3} ${pos.x +3} ${pos.y +4} ${pos.y +3} air`);
+            if (block.typeId === "dmss:o_altar"){dimension.spawnEntity("dmss:gold_dragon_o", {x: pos.x,y: pos.y+1,z: pos.z})}
+            if (block.typeId === "dmss:n_altar"){dimension.spawnEntity("dmss:gold_dragon_n", {x: pos.x,y: pos.y+1,z: pos.z})}
+        }
+        else{
+            source.sendMessage('wrong position (place it back in the stucture to resummon the dragon)');
+        }
+    }}
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('dmss:quartz_totem', {
+    onUseOn: (event) => {
+        const source = event.source
+        const block = event.block
+        const dimension = source.dimension;
+        if (!source.isSneaking) return;
+        if (block.typeId !== "dmss:n_altar") return;
+        const pos = block.location;
+        let below1 = dimension.getBlock({x: pos.x, y: pos.y - 1, z: pos.z});
+        let below2 = dimension.getBlock({x: pos.x, y: pos.y - 2, z: pos.z});
+
+        if (below1.typeId === "minecraft:reinforced_deepslate" && below2.typeId === "minecraft:reinforced_deepslate") {
+            const equippable = source.getComponent("minecraft:equippable");
+            if (!equippable) source.sendMessage('no equippable');
+            const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+            if (!mainhand) source.sendMessage('no mainhand;');
+            mainhand.setItem(undefined);
+            dimension.runCommandAsync(`fill ${pos.x -3} ${pos.y +1} ${pos.y -3} ${pos.x +3} ${pos.y +4} ${pos.y +3} air`);
+            dimension.spawnEntity("dmss:quartz_dragon", {x: pos.x,y: pos.y+1,z: pos.z})
+        }
+        else{
+            source.sendMessage('wrong position (place it back in the stucture to resummon the dragon)');
+        }
+    }
+    });
+    initEvent.itemComponentRegistry.registerCustomComponent('dmss:redstone_totem', {
+    onUseOn: (event) => {
+        const source = event.source
+        const block = event.block
+        const dimension = source.dimension;
+        if (!source.isSneaking) return;
+        if (block.typeId !== "dmss:o_altar") return;
+        const pos = block.location;
+        let below1 = dimension.getBlock({x: pos.x, y: pos.y - 1, z: pos.z});
+        let below2 = dimension.getBlock({x: pos.x, y: pos.y - 2, z: pos.z});
+
+        if (below1.typeId === "minecraft:reinforced_deepslate" && below2.typeId === "minecraft:reinforced_deepslate") {
+            const equippable = source.getComponent("minecraft:equippable");
+            if (!equippable) source.sendMessage('no equippable');
+            const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+            if (!mainhand) source.sendMessage('no mainhand;');
+            mainhand.setItem(undefined);
+            dimension.runCommandAsync(`fill ${pos.x -3} ${pos.y +1} ${pos.y -3} ${pos.x +3} ${pos.y +4} ${pos.y +3} air`);
+            dimension.spawnEntity("dmss:redstone_dragon", {x: pos.x,y: pos.y+1,z: pos.z})
         }
         else{
             source.sendMessage('wrong position (place it back in the stucture to resummon the dragon)');

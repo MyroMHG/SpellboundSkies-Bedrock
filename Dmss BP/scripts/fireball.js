@@ -1,4 +1,4 @@
-import { world, system } from '@minecraft/server'
+import {system } from '@minecraft/server'
 
 system.afterEvents.scriptEventReceive.subscribe(event => {
     const dragon = event.sourceEntity

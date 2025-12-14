@@ -58,8 +58,8 @@ function Dragons(player) {
         .button("General information", "textures/ui/infobulb")
         .button("Tameable", "textures/entity/cherry_dragon/head")
         .button("Boss", "textures/entity/boss/emerald_head")
-        .button("Back")
-        .button("Close");
+        .button("§cBack")
+        .button("§aClose");
         form.show(player).then((response) => {
         if (response.canceled) return;
         switch (response.selection) {
@@ -424,7 +424,7 @@ function Ingots(player) {
 function Tools(player) {
     const textPage = new ActionFormData()
         .title("§bTools")
-        .body("Use the Dragon ingots and the overworld altar to craft yourself tools. Some tools are better than others.")
+        .body("Use the Dragon ingots and the overworld altar to craft yourself some tools with special properties.")
         .button("§cBack")
         .button("§aClose");
 
