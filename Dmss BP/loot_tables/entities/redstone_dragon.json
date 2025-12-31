@@ -52,6 +52,26 @@
 					]
 				}
 			]
+		},
+		{
+			"rolls":1,
+			"conditions": [{"condition": "random_chance","chance": 0.001}],
+			"entries":[
+				{
+					"type": "item",
+					"name": "dmss:soulstone",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_count",
+							"count": {
+								"min": 1,
+								"max": 1
+							}
+						}
+					]
+				}
+			]
 		}
 	]
 }

@@ -8,7 +8,7 @@
 			"entries": [
 				{
 					"type": "item",
-					"name": "dmms:cherry_dragon_scales",
+					"name": "dmss:cherry_dragon_scales",
 					"weight": 1,
 					"functions": [
 						{
@@ -29,26 +29,6 @@
 				{
 					"type": "item",
 					"name": "dmss:cherry_spellstone",
-					"weight": 1,
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 1,
-								"max": 1
-							}
-						}
-					]
-				}
-			]
-		},
-		{
-			"rolls":1,
-			"conditions": [{"condition": "random_chance","chance": 0.1}],
-			"entries":[
-				{
-					"type": "item",
-					"name": "dmss:soulstone",
 					"weight": 1,
 					"functions": [
 						{
