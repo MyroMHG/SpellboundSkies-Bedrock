@@ -23,7 +23,6 @@ world.afterEvents.itemUse.subscribe((item) => {
               item.source.runCommandAsync(`particle dragonmounts:smoke ${adjustedPosition.x} ${adjustedPosition.y} ${adjustedPosition.z}`)
               item.source.runCommandAsync(`playsound custom.dragon_orb @s ${adjustedPosition.x} ${adjustedPosition.y} ${adjustedPosition.z}`)
               item.source.dimension.spawnItem(new ItemStack('dmss:dragon_orb', 1), adjustedPosition);
-              player.runCommandAsync(`playsound custom.dragon_orb @s ${x} ${y} ${z}`)
 
             }
             else

@@ -87,7 +87,8 @@ world.beforeEvents.worldInitialize.subscribe(initEvent => {
         onUse(event) {
             const source = event.source;
             const position = {x: source.location.x,y: source.location.y,z: source.location.z};
-            const offset = {x: position.x,y: position.y+1,z: position.z};
+            const offset1 = {x: position.x,y: position.y+1,z: position.z};
+            const offset2 = {x: position.x,y: position.y+2,z: position.z};
             const dimension = source.dimension;
 
             const equippable = source.getComponent("minecraft:equippable");
@@ -100,7 +101,8 @@ world.beforeEvents.worldInitialize.subscribe(initEvent => {
             let x = 0;
             while (x < 5) {
                 dimension.runCommandAsync(`particle minecraft:cherry_leaves_particle ${position.x} ${position.y} ${position.y}`);
-                dimension.runCommandAsync(`particle minecraft:cherry_leaves_particle ${offset.x} ${offset.y} ${offset.z}`);
+                dimension.runCommandAsync(`particle minecraft:cherry_leaves_particle ${offset1.x} ${offset1.y} ${offset1.z}`);
+                dimension.runCommandAsync(`particle minecraft:cherry_leaves_particle ${offset2.x} ${offset2.y} ${offset2.z}`);
                 x++;
             }
             MagicDamage(source, mainhand);
@@ -120,17 +122,17 @@ world.beforeEvents.worldInitialize.subscribe(initEvent => {
     initEvent.itemComponentRegistry.registerCustomComponent('dmss:ore_staff', {
         onUse(event) {
             const source = event.source;
-            source.dimension.spawnParticle("dmss:magic",source.location);
+            let point =source.location
+            source.dimension.spawnParticle("dmss:magic",point);
             const equippable = source.getComponent("minecraft:equippable");
             if (!equippable) source.sendMessage('no equippable');
             const mainhand = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
             if (!mainhand) source.sendMessage('no mainhand;');
             MagicDamage(source, mainhand);
-            source.dimension.spawnParticle("dmss:magic",source.location);
 
             system.runTimeout(() => {
-                source.dimension.spawnParticle("dmss:cast",source.location);
-            for (const target of source.dimension.getEntities({location: source.location,maxDistance: 6})) {
+                source.dimension.spawnParticle("dmss:cast",point);
+            for (const target of source.dimension.getEntities({location: point,maxDistance: 6})) {
                 if (target === source) continue;
                     let dx = target.location.x - source.location.x;
                     let dz = target.location.z - source.location.z;

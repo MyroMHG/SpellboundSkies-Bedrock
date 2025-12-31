@@ -244,7 +244,7 @@ function Eggs(player) {
         .title("Dragon Eggs")
         .body("Choose an option:")
         .button("General information", "textures/ui/infobulb");
-        if ( (player.getDynamicProperty("dmss:cherry_egg")?? 0)===1) {form.button("Cherry", "textures/items/eggs/cherry");} 
+        if ( (player.getDynamicProperty("dmss:cherry_egg")?? 0)===1) {form.button("Cherry", "textures/entity/cherry_dragon/icon_egg");} 
         else {form.button("§4§lLocked","textures/blocks/barrier");}
         form.button("§cBack")
         form.button("§aClose");
@@ -373,8 +373,8 @@ function GeneralSpecial(player) {
 function Totems(player) {
     const textPage = new ActionFormData()
         .title("§bTotems")
-        .body("You can craft these special totems ot of a vanilla totem, crying obsidian and 4 block of their respective ore. /n"+
-                "When standing on top of an altar and using the totem the respective ore dragon will be spawned."
+        .body("You can craft these special totems ot of a vanilla totem, surrounded by block of their respective ore. /n/n"+
+                "When standing on top of an altar and using the totem the respective ore dragon will be spawned (the altar need to be in the correct spot in the structure)."
             )
         .button("§cBack")
         .button("§aClose");
@@ -387,7 +387,7 @@ function Totems(player) {
 function Scales(player) {
     const textPage = new ActionFormData()
         .title("§bScales")
-        .body("Scales are a material to craft the different ingots and armor using the the overworld altar. Scales will be droped by tameable dragons from time to time.")
+        .body("Scales are a material to craft the different ingots and armor using the the altars. Scales will be droped by tameable dragons from time to time or when killing a hostile dragon.")
         .button("§cBack")
         .button("§aClose");
 
@@ -399,7 +399,7 @@ function Scales(player) {
 function Armor(player) {
     const textPage = new ActionFormData()
         .title("§bArmor")
-        .body("Use the Dragon scales and the overworld altar to craft the dragon armor set. The recipe is the same as for an iron or diamond armor and has special abilities."
+        .body("Use the Dragon scales and the altar to craft some armor. The recipe is the same as for an iron or diamond armor and has special abilities."
             )
         .button("§cBack")
         .button("§aClose");
@@ -436,7 +436,7 @@ function Tools(player) {
 function Soulstones(player) {
     const textPage = new ActionFormData()
         .title("§bSoulstones")
-        .body("Soulstones can be used on the dragons soul after it died to revive them."
+        .body("Soulstones can be used to revive dragons (interact with an altar) or make a dragon orb."
             )
         .button("§cBack")
         .button("§aClose");
@@ -475,7 +475,7 @@ function Orb(player) {
     const textPage = new ActionFormData()
         .title("§bAltar")
         .body("The dragon orb is a powerful magical artefact that allows you to carry any tamed dragon in your inventory. In order to put the dragon inside just interact with the dragon using th orb. In order to release the dragon jut use the item./n/n"+
-                "Please not that the dragon as long as it is inside the orb will be in a timeless space."
+                "Please note that the dragon as long as it is inside the orb will be in a timeless space."
         )
         .button("§cBack")
         .button("§aClose");
