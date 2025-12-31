@@ -10,7 +10,7 @@
     "start_height": {
         "type": "constant",
         "value": {
-            "absolute": -2
+            "absolute": -4
         } 
     },
     "max_depth": 1,
