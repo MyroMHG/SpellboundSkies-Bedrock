@@ -2,7 +2,7 @@
 	"format_version": "1.10.0",
 	"minecraft:attachable": {
 		"description": {
-			"identifier": "dmss:forest_pants",
+			"identifier": "dmss:forest_dragon_pants",
 			"render_controllers": ["controller.render.forest_armor"],
 			"materials": {
 				"default": "entity_alphatest",

@@ -2,7 +2,7 @@
 	"format_version": "1.10.0",
 	"minecraft:attachable": {
 		"description": {
-			"identifier": "dmss:forest_boots",
+			"identifier": "dmss:forest_dragon_boots",
 			"render_controllers": ["controller.render.forest_armor"],
 			"materials": {
 				"default": "entity_alphatest",
