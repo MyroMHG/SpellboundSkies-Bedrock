@@ -14,7 +14,7 @@ It is a different add-on compared to it's prequel Dragon Mounts 2.
 
 ## Download Links
 - [CurseForge](https://www.curseforge.com/minecraft-bedrock/addons/dragon-mounts-v1-3-25)
-- [MCPEDL](https://mcpedl.com/dragon-mounts-v1-3-25/)
+- [MCPEDL](https://mcpedl.com/spellbound-skies/)
 
 ## Disclaimer
 This is unrelated to "Dragon Mounts 3". Anything outside of Dragon Mounts: Spellbound Skies is unofficial.
